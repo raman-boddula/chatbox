@@ -1,8 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext, useId, useState } from "react";
 import { MessageContext } from "../context/MessageContext";
 
 export const ChatBox = ({ chatBoxId, handleUpdateChatBox }) => {
-  const [typedText, setTypedText] = useState("");
+    const [typedText, setTypedText] = useState("");
+    const id = useId();
   const handleChange = (e) => {
     setTypedText(e.target.value);
   };
@@ -11,8 +12,18 @@ export const ChatBox = ({ chatBoxId, handleUpdateChatBox }) => {
     <>
       <div className="chatbox-container dis-flex">
         <div className="typed-text">
-          {messages.map((message, i) => (
-            <div key={i}>{message}</div>
+          {messages.map((message) => (
+            <div
+              key={id}
+              className={
+                Object.keys(message) == chatBoxId.id
+                  ? "align-right"
+                  : "align-left"
+              }
+            >
+              {" "}
+              {Object.values(message)[0]}
+            </div>
           ))}
         </div>
         <textarea
@@ -24,7 +35,7 @@ export const ChatBox = ({ chatBoxId, handleUpdateChatBox }) => {
           <button
             className="send-btn btn"
             onClick={() => {
-              handleMessage(typedText);
+              handleMessage(typedText, chatBoxId.id);
               setTypedText("");
             }}
             disabled={!typedText.length}

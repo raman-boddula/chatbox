@@ -4,11 +4,11 @@ export const MessageContext = React.createContext();
 
 export const MessageContextProvider = ({ children }) => {
     const [messages, setMessages] = useState([]);
-    const handleMessage = (msg) => {
-        setMessages((prev) => [...prev, msg]);
+    const handleMessage = (msg, id) => {
+        setMessages((prev) => [...prev, { [id]: msg }]);
     }
   return (
-    <MessageContext.Provider value={{ messages, handleMessage }}>
+    <MessageContext.Provider value={{ messages, handleMessage,setMessages }}>
       {children}
     </MessageContext.Provider>
   );

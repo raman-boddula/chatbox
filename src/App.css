@@ -19,15 +19,16 @@ body {
   grid-gap: 2%;
 }
 
-.btn{
+.btn {
   border: none;
-    padding: 10px;
-    margin: 10px 10px 10px 0px;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+  padding: 10px;
+  margin: 10px 10px 10px 0px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
+
 .close-btn {
   background: #F24C3D;
 }
@@ -50,12 +51,25 @@ body {
 .typed-text {
   width: 100%;
   border: 1px solid black;
-  min-height: 150px;
+  height: 150px;
   border-radius: 4px;
+  padding: 5px;
+  line-height: 140%;
+  overflow: scroll;
 }
-.send-btn{
+
+.send-btn {
   background: #0079FF;
 }
-.send-btn:disabled{
+
+.send-btn:disabled {
   background: #85afde
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
 }
