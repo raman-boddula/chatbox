@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+body {
+  padding: 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.add-btn {
+  background-color: #22A699;
+  margin-left: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.chatbox-container {
+  justify-content: left;
+  align-items: flex-start;
   flex-direction: column;
+}
+
+.chatboxes-main-container {
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  grid-gap: 2%;
+}
+
+.btn{
+  border: none;
+    padding: 10px;
+    margin: 10px 10px 10px 0px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-btn {
+  background: #F24C3D;
+}
+
+.dis-flex {
+  display: flex;
+}
+
+.vertical-center {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.close-btn:disabled {
+  background: #c88b86;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.typed-text {
+  width: 100%;
+  border: 1px solid black;
+  min-height: 150px;
+  border-radius: 4px;
+}
+.send-btn{
+  background: #0079FF;
+}
+.send-btn:disabled{
+  background: #85afde
 }
